@@ -1,0 +1,74 @@
+/* agil.bylucas — Color tokens
+   Brand palette 2026: cream paper + night-blue ink + orange accent.
+   Orange is an ACCENT ONLY (≤10–15% of any screen); never a large ground.
+   Section rhythm: cream → night blue → cream, orange as the through-line. */
+:root{
+  /* ---- Primaries ---- */
+  --orange:#ED470B;        /* primary accent — CTAs, numerals, icons, links, emphasis borders */
+  --night:#031927;         /* dark sections, headers, footers, feature cards */
+  --cream:#F5EDE0;         /* light section grounds; also text on dark */
+
+  /* ---- Derived surfaces ---- */
+  --white:#FFFFFF;         /* cards on cream */
+  --night-elevated:#0A2536;/* cards on night blue (night +10% light) */
+  --cream-sunk:#EDE2CF;    /* recessed band on cream */
+
+  /* ---- Orange ramp ---- */
+  --orange-hover:#D13E08;  /* hover / pressed (orange −10%) */
+  --orange-soft:#F6A783;   /* outline numerals, subtle fills */
+  --orange-wash:#FBE3D6;   /* tinted callout backgrounds on cream */
+
+  /* ---- Text ---- */
+  --text-on-light:#031927;    /* primary text on cream/white */
+  --text-on-light-muted:#6B7A85; /* secondary text on cream/white */
+  --text-on-dark:#F5EDE0;     /* primary text on night blue (cream) */
+  --text-on-dark-muted:#C9D2D8;  /* secondary text on night blue */
+  --text-faint:#9DA9B0;       /* disabled / hairline labels */
+
+  /* ---- Lines & borders ---- */
+  --line:#E4D9C6;          /* hairline on cream */
+  --line-strong:#D6C8B0;
+  --line-on-dark:#173241;  /* hairline on night blue */
+
+  /* ---- Feedback (desaturated to live in the warm palette) ---- */
+  --success:#4E8A63;
+  --warning:#C99A3C;
+  --danger:#C0503A;
+
+  /* ---- Semantic aliases ---- */
+  --bg-page:var(--cream);
+  --bg-sunk:var(--cream-sunk);
+  --bg-elevated:var(--white);
+  --bg-inverse:var(--night);
+  --bg-inverse-elevated:var(--night-elevated);
+  --bg-callout:var(--orange-wash);
+
+  --text-strong:var(--text-on-light);
+  --text-body:var(--text-on-light);
+  --text-muted:var(--text-on-light-muted);
+  --text-inverse:var(--text-on-dark);
+  --text-inverse-muted:var(--text-on-dark-muted);
+  --text-on-accent:var(--white);
+  --text-accent:var(--orange);
+
+  --border-default:var(--line);
+  --border-strong:var(--line-strong);
+  --border-on-dark:var(--line-on-dark);
+
+  --accent:var(--orange);
+  --accent-hover:var(--orange-hover);
+  --focus-ring:var(--orange);
+
+  /* Back-compat aliases (older cards/components referenced these names) */
+  --paper:var(--cream);
+  --paper-sunk:var(--cream-sunk);
+  --ink:var(--night);
+  --ink-2:var(--text-on-light);
+  --ink-body:var(--text-on-light);
+  --ink-muted:var(--text-on-light-muted);
+  --ink-faint:var(--text-faint);
+  --terracotta:var(--orange);
+  --terracotta-strong:var(--orange-hover);
+  --terracotta-soft:var(--orange-soft);
+  --terracotta-wash:var(--orange-wash);
+}

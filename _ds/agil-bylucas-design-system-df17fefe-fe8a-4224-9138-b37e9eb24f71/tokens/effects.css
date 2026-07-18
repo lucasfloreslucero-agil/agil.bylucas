@@ -1,0 +1,35 @@
+/* agil.bylucas — Radii, borders, shadows, motion
+   The brochure favours calm, soft-cornered cards with hairline borders and
+   very light shadows. Pills/tags are fully rounded (capsule). */
+:root{
+  /* Corner radii */
+  --radius-xs:4px;
+  --radius-sm:8px;      /* inputs, small controls */
+  --radius-md:12px;     /* cards, encuentro rows */
+  --radius-lg:16px;     /* larger panels */
+  --radius-pill:999px;  /* tags, capsule buttons */
+
+  /* Border widths */
+  --border-hair:1px; /* @kind spacing */
+  --border-accent:3px;  /* @kind spacing */
+
+  /* Shadows — soft & warm, low elevation */
+  --shadow-xs:0 1px 2px rgba(28,29,34,.05);
+  --shadow-sm:0 2px 8px rgba(28,29,34,.06);
+  --shadow-md:0 8px 24px rgba(28,29,34,.08);
+  --shadow-lg:0 18px 48px rgba(28,29,34,.12);
+
+  /* Focus */
+  --focus-width:2px; /* @kind spacing */
+  --focus-offset:2px; /* @kind spacing */
+
+  /* Motion — restrained; ease-out fades, no bounce */
+  --ease-out:cubic-bezier(.22,.61,.36,1); /* @kind other */
+  --ease-in-out:cubic-bezier(.45,.05,.35,1); /* @kind other */
+  --dur-fast:120ms; /* @kind other */
+  --dur:200ms; /* @kind other */
+  --dur-slow:320ms; /* @kind other */
+
+  /* Imagery: brand duotone overlay for portraits — orange highlights into night-blue shadows */
+  --duotone-overlay:linear-gradient(155deg,rgba(237,71,11,.55) 0%,rgba(209,62,8,.32) 42%,rgba(3,25,39,.78) 100%); /* @kind other */
+}

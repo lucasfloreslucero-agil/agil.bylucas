@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="_ds/agil-bylucas-design-system-df17fefe-fe8a-4224-9138-b37e9eb24f71/tokens/fonts.css">
+  <link rel="stylesheet" href="_ds/agil-bylucas-design-system-df17fefe-fe8a-4224-9138-b37e9eb24f71/tokens/colors.css">
+  <link rel="stylesheet" href="_ds/agil-bylucas-design-system-df17fefe-fe8a-4224-9138-b37e9eb24f71/tokens/typography.css">
+  <link rel="stylesheet" href="_ds/agil-bylucas-design-system-df17fefe-fe8a-4224-9138-b37e9eb24f71/tokens/spacing.css">
+  <link rel="stylesheet" href="_ds/agil-bylucas-design-system-df17fefe-fe8a-4224-9138-b37e9eb24f71/tokens/effects.css">
+  <link rel="stylesheet" href="_ds/agil-bylucas-design-system-df17fefe-fe8a-4224-9138-b37e9eb24f71/styles.css">
+  <script src="_ds/agil-bylucas-design-system-df17fefe-fe8a-4224-9138-b37e9eb24f71/_ds_bundle.js"></script>
+  <style>
+    html { scroll-behavior: smooth; }
+    body { margin: 0; background: var(--cream); }
+    a { color: var(--orange); text-decoration: none; }
+    a:hover { color: var(--orange-hover); }
+    @keyframes agilFadeUp { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+  </style>
+</helmet>
+
+<nav style="position: sticky; top: 0; z-index: 50; background: rgba(245,237,224,.88); backdrop-filter: blur(10px); border-bottom: 1px solid var(--line);">
+  <div style="max-width: 1140px; margin: 0 auto; padding: 14px 24px; display: flex; align-items: center; gap: 28px;">
+    <span style="font-family: var(--font-display); font-weight: var(--fw-bold); font-size: 19px; color: var(--night); letter-spacing: -0.01em;">agil<span style="color: var(--orange);">.</span>bylucas</span>
+    <div style="display: flex; gap: 22px; margin-left: auto; align-items: center;">
+      <button onClick="{{ goQuien }}" style="background: none; border: none; cursor: pointer; padding: 6px 2px; font-family: var(--font-text); font-size: 14px; color: var(--text-on-light-muted);" style-hover="color: var(--night);">Quién soy</button>
+      <button onClick="{{ goMetodo }}" style="background: none; border: none; cursor: pointer; padding: 6px 2px; font-family: var(--font-text); font-size: 14px; color: var(--text-on-light-muted);" style-hover="color: var(--night);">Cómo trabajo</button>
+      <button onClick="{{ goServicios }}" style="background: none; border: none; cursor: pointer; padding: 6px 2px; font-family: var(--font-text); font-size: 14px; color: var(--text-on-light-muted);" style-hover="color: var(--night);">Servicios</button>
+      <button onClick="{{ goParaQuien }}" style="background: none; border: none; cursor: pointer; padding: 6px 2px; font-family: var(--font-text); font-size: 14px; color: var(--text-on-light-muted);" style-hover="color: var(--night);">Para quién</button>
+      <x-import component-from-global-scope="AgilBylucasDesignSystem_df17fe.Button" variant="primary" size="sm" onClick="{{ goContacto }}" hint-size="140px,34px">Trabajemos juntos</x-import>
+    </div>
+  </div>
+</nav>
+
+<header data-screen-label="Hero" style="max-width: 1140px; margin: 0 auto; padding: 84px 24px 90px; display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 64px; align-items: center;">
+  <div style="animation: agilFadeUp .6s var(--ease-out, ease-out) both;">
+    <div style="display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 30px;">
+      <x-import component-from-global-scope="AgilBylucasDesignSystem_df17fe.Tag" hint-size="120px,30px">Consultoría</x-import>
+      <x-import component-from-global-scope="AgilBylucasDesignSystem_df17fe.Tag" hint-size="120px,30px">Incubación</x-import>
+      <x-import component-from-global-scope="AgilBylucasDesignSystem_df17fe.Tag" hint-size="80px,30px">OKR</x-import>
+      <x-import component-from-global-scope="AgilBylucasDesignSystem_df17fe.Tag" hint-size="130px,30px">Capacitación</x-import>
+      <x-import component-from-global-scope="AgilBylucasDesignSystem_df17fe.Tag" tone="wash" hint-size="120px,30px">IA Aplicada</x-import>
+    </div>
+    <h1 style="font-family: var(--font-display); font-weight: var(--fw-bold); font-size: clamp(42px, 5.5vw, 72px); line-height: 1.04; letter-spacing: -0.02em; color: var(--night); margin: 0 0 24px;">Ideas convertidas en negocios que funcionan<span style="color: var(--orange);">.</span></h1>
+    <p style="font-family: var(--font-text); font-size: var(--fs-lead, 19px); line-height: 1.55; color: var(--text-on-light-muted); max-width: 520px; margin: 0 0 34px;">Métodos y herramientas tecnológicas para que los negocios validen, ordenen su estrategia y crezcan con foco.</p>
+    <div style="display: flex; gap: 14px; align-items: center;">
+      <x-import component-from-global-scope="AgilBylucasDesignSystem_df17fe.Button" variant="primary" size="lg" onClick="{{ goContacto }}" hint-size="200px,46px">Agendá una llamada</x-import>
+      <x-import component-from-global-scope="AgilBylucasDesignSystem_df17fe.Button" variant="outline" size="lg" onClick="{{ goServicios }}" hint-size="160px,46px">Ver servicios</x-import>
+    </div>
+  </div>
+  <div style="position: relative; border-radius: var(--radius-md, 12px); overflow: hidden; box-shadow: var(--shadow-md); aspect-ratio: 4 / 5; animation: agilFadeUp .6s .12s var(--ease-out, ease-out) both;">
+    <img src="assets/lucas-portrait.png" alt="Lucas Flores Lucero" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+    <div style="position: absolute; left: 0; right: 0; bottom: 0; height: 45%; background: linear-gradient(to top, rgba(3,25,39,.75), transparent);"></div>
+    <div style="position: absolute; left: 18px; bottom: 18px; right: 18px; color: var(--cream);">
+      <div style="font-family: var(--font-display); font-weight: var(--fw-bold); font-size: 20px;">Lucas Flores Lucero</div>
+      <div style="font-family: var(--font-text); font-size: 13px; color: var(--text-on-dark-muted); margin-top: 4px;">Consultor de estrategia · OKR Coach · Mentor de emprendedores</div>
+    </div>
+  </div>
+</header>
+
+<section id="quien" data-screen-label="Quién soy" style="background: var(--white); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);">
+  <div style="max-width: 1140px; margin: 0 auto; padding: 96px 24px; display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start;">
+    <div>
+      <x-import component-from-global-scope="AgilBylucasDesignSystem_df17fe.SectionHeader" kicker="Quién soy" title="Acción por encima de la intención." hint-size="100%,120px"></x-import>
+      <p style="font-family: var(--font-text); font-size: 16px; line-height: 1.65; color: var(--text-on-light); margin: 22px 0 0; max-width: 480px;">Ingeniero Industrial (UNCuyo), consultor de estrategia organizacional y mentor. Desde 2021 acompaño a founders, pymes y equipos de toda Latinoamérica a transformar ideas en negocios con foco, datos reales y hábitos.</p>
+      <p style="font-family: var(--font-text); font-size: 16px; line-height: 1.65; color: var(--text-on-light-muted); margin: 14px 0 26px; max-width: 480px;">Fundador de agil.bylucas y ex CEO de 3NG Tech (data + IA).</p>
+      <x-import component-from-global-scope="AgilBylucasDesignSystem_df17fe.Callout" label="Mi propósito" hint-size="100%,80px">Hacer cosas piolas: acción por encima de la intención, en cualquier tipo de proyecto que tenga impacto real, sin necesidad de falsas formalidades.</x-import>
+    </div>
+    <div ref="{{ statsRef }}" style="display: grid; grid-template-columns: 1fr 1fr; gap: 18px; align-self: center;">
+      <sc-for list="{{ stats }}" as="s" hint-placeholder-count="4">
+        <div style="background: var(--cream); border: 1px solid var(--line); border-radius: var(--radius-md, 12px); padding: 28px 24px;">
+          <div style="font-family: var(--font-display); font-weight: var(--fw-bold); font-size: 46px; line-height: 1; color: var(--orange); font-variant-numeric: tabular-nums;">{{ s.value }}</div>
+          <div style="font-family: var(--font-text); font-size: 14px; color: var(--text-on-light-muted); margin-top: 10px;">{{ s.label }}</div>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<section id="metodo" data-screen-label="Cómo trabajo" style="background: var(--night);">
+  <div style="max-width: 1140px; margin: 0 auto; padding: 96px 24px;">
+    <x-import component-from-global-scope="AgilBylucasDesignSystem_df17fe.SectionHeader" kicker="Mi forma de trabajar" title="As is → To be → To do" on-dark="{{ true }}" lede="Un camino simple: entender dónde estás, definir a dónde vas y construir el plan para llegar." hint-size="100%,150px"></x-import>
+    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 48px;">
+      <div style="background: var(--night-elevated); border: 1px solid var(--line-on-dark); border-radius: var(--radius-md, 12px); padding: 30px 28px;">
+        <div style="font-family: var(--font-display); font-weight: var(--fw-bold); font-size: 34px; color: var(--orange); line-height: 1;">1</div>
+        <h3 style="font-family: var(--font-display); font-weight: var(--fw-semibold); font-size: 21px; color: var(--cream); margin: 16px 0 8px;">As is</h3>
+        <p style="font-family: var(--font-text); font-size: 15px; line-height: 1.6; color: var(--text-on-dark-muted); margin: 0;">Entender el negocio tal como es hoy: modelo, clientes, números y procesos.</p>
+      </div>
+      <div style="background: var(--night-elevated); border: 1px solid var(--line-on-dark); border-radius: var(--radius-md, 12px); padding: 30px 28px;">
+        <div style="font-family: var(--font-display); font-weight: var(--fw-bold); font-size: 34px; color: var(--orange); line-height: 1;">2</div>
+        <h3 style="font-family: var(--font-display); font-weight: var(--fw-semibold); font-size: 21px; color: var(--cream); margin: 16px 0 8px;">To be</h3>
+        <p style="font-family: var(--font-text); font-size: 15px; line-height: 1.6; color: var(--text-on-dark-muted); margin: 0;">Definir juntos a dónde debería ir: propósito, visión medible y resultados clave desafiantes.</p>
+      </div>
+      <div style="background: var(--night-elevated); border: 1px solid var(--line-on-dark); border-radius: var(--radius-md, 12px); padding: 30px 28px;">
+        <div style="font-family: var(--font-display); font-weight: var(--fw-bold); font-size: 34px; color: var(--orange); line-height: 1;">3</div>
+        <h3 style="font-family: var(--font-display); font-weight: var(--fw-semibold); font-size: 21px; color: var(--cream); margin: 16px 0 8px;">To do</h3>
+        <p style="font-family: var(--font-text); font-size: 15px; line-height: 1.6; color: var(--text-on-dark-muted); margin: 0;">Construir el plan para llegar: iniciativas concretas, responsables, hábitos de seguimiento y aprendizajes basados en datos.</p>
+      </div>
+    </div>
+    <div style="margin-top: 64px;">
+      <div style="font-family: var(--font-display); font-weight: var(--fw-medium); font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--text-on-dark-muted); margin-bottom: 22px;">Metodologías validadas en proyectos reales</div>
+      <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px;">
+        <div style="border: 1px solid var(--line-on-dark); border-radius: var(--radius-md, 12px); padding: 18px 20px; transition: border-color .2s ease-out, transform .2s ease-out;" style-hover="border-color: var(--orange); transform: translateY(-2px);"><div style="font-family: var(--font-display); font-weight: var(--fw-semibold); font-size: 16px; color: var(--cream);">OKRs</div><div style="font-family: var(--font-text); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-faint); margin-top: 6px;">Foco y resultados</div></div>
+        <div style="border: 1px solid var(--line-on-dark); border-radius: var(--radius-md, 12px); padding: 18px 20px; transition: border-color .2s ease-out, transform .2s ease-out;" style-hover="border-color: var(--orange); transform: translateY(-2px);"><div style="font-family: var(--font-display); font-weight: var(--fw-semibold); font-size: 16px; color: var(--cream);">Scrum</div><div style="font-family: var(--font-text); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-faint); margin-top: 6px;">Entrega ágil</div></div>
+        <div style="border: 1px solid var(--line-on-dark); border-radius: var(--radius-md, 12px); padding: 18px 20px; transition: border-color .2s ease-out, transform .2s ease-out;" style-hover="border-color: var(--orange); transform: translateY(-2px);"><div style="font-family: var(--font-display); font-weight: var(--fw-semibold); font-size: 16px; color: var(--cream);">Lean Startup</div><div style="font-family: var(--font-text); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-faint); margin-top: 6px;">Validación</div></div>
+        <div style="border: 1px solid var(--line-on-dark); border-radius: var(--radius-md, 12px); padding: 18px 20px; transition: border-color .2s ease-out, transform .2s ease-out;" style-hover="border-color: var(--orange); transform: translateY(-2px);"><div style="font-family: var(--font-display); font-weight: var(--fw-semibold); font-size: 16px; color: var(--cream);">Design Thinking</div><div style="font-family: var(--font-text); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-faint); margin-top: 6px;">Innovación</div></div>
+        <div style="border: 1px solid var(--line-on-dark); border-radius: var(--radius-md, 12px); padding: 18px 20px; transition: border-color .2s ease-out, transform .2s ease-out;" style-hover="border-color: var(--orange); transform: translateY(-2px);"><div style="font-family: var(--font-display); font-weight: var(--fw-semibold); font-size: 16px; color: var(--cream);">Traction (EOS)</div><div style="font-family: var(--font-text); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-faint); margin-top: 6px;">Gestión</div></div>
+        <div style="border: 1px solid var(--line-on-dark); border-radius: var(--radius-md, 12px); padding: 18px 20px; transition: border-color .2s ease-out, transform .2s ease-out;" style-hover="border-color: var(--orange); transform: translateY(-2px);"><div style="font-family: var(--font-display); font-weight: var(--fw-semibold); font-size: 16px; color: var(--cream);">Kanban</div><div style="font-family: var(--font-text); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-faint); margin-top: 6px;">Flujo de trabajo</div></div>
+        <div style="border: 1px solid var(--line-on-dark); border-radius: var(--radius-md, 12px); padding: 18px 20px; transition: border-color .2s ease-out, transform .2s ease-out;" style-hover="border-color: var(--orange); transform: translateY(-2px);"><div style="font-family: var(--font-display); font-weight: var(--fw-semibold); font-size: 16px; color: var(--cream);">Lean Management</div><div style="font-family: var(--font-text); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-faint); margin-top: 6px;">Eficiencia</div></div>
+        <div style="border: 1px solid var(--line-on-dark); border-radius: var(--radius-md, 12px); padding: 18px 20px; transition: border-color .2s ease-out, transform .2s ease-out;" style-hover="border-color: var(--orange); transform: translateY(-2px);"><div style="font-family: var(--font-display); font-weight: var(--fw-semibold); font-size: 16px; color: var(--cream);">Design Sprint</div><div style="font-family: var(--font-text); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-faint); margin-top: 6px;">Prototipado</div></div>
+      </div>
+    </div>
+    <div style="margin-top: 40px; display: flex; flex-wrap: wrap; gap: 10px; align-items: center;">
+      <span style="font-family: var(--font-display); font-weight: var(--fw-medium); font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--text-on-dark-muted); margin-right: 8px;">Título y certificaciones</span>
+      <x-import component-from-global-scope="AgilBylucasDesignSystem_df17fe.Tag" on-dark="{{ true }}" hint-size="160px,30px">Ingeniero Industrial</x-import>
+      <x-import component-from-global-scope="AgilBylucasDesignSystem_df17fe.Tag" on-dark="{{ true }}" hint-size="200px,30px">OKR Champion Professional</x-import>
+      <x-import component-from-global-scope="AgilBylucasDesignSystem_df17fe.Tag" on-dark="{{ true }}" hint-size="190px,30px">Scrum Master Professional</x-import>
+      <x-import component-from-global-scope="AgilBylucasDesignSystem_df17fe.Tag" on-dark="{{ true }}" hint-size="200px,30px">Transformación digital ágil</x-import>
+    </div>
+  </div>
+</section>
+
+<section id="servicios" data-screen-label="Servicios" style="max-width: 1140px; margin: 0 auto; padding: 96px 24px;">
+  <x-import component-from-global-scope="AgilBylucasDesignSystem_df17fe.SectionHeader" kicker="Servicios" title="Cuatro formas de trabajar juntos." hint-size="100%,110px"></x-import>
+  <div style="display: flex; flex-direction: column; gap: 14px; margin-top: 44px;">
+    <sc-for list="{{ servicios }}" as="sv" hint-placeholder-count="4">
+      <div style="background: var(--white); border: 1px solid {{ sv.border }}; border-radius: var(--radius-md, 12px); overflow: hidden; transition: border-color .2s ease-out;">
+        <button onClick="{{ sv.onToggle }}" style="display: flex; align-items: center; gap: 20px; width: 100%; background: none; border: none; cursor: pointer; text-align: left; padding: 22px 26px;">
+          <span style="font-family: var(--font-display); font-weight: var(--fw-bold); font-size: 15px; color: var(--orange-soft); flex: 0 0 34px;">{{ sv.num }}</span>
+          <span style="flex: 1;">
+            <span style="display: block; font-family: var(--font-display); font-weight: var(--fw-semibold); font-size: 20px; color: var(--night);">{{ sv.nombre }}</span>
+            <span style="display: block; font-family: var(--font-text); font-size: 14px; color: var(--text-on-light-muted); margin-top: 4px;">{{ sv.sub }}</span>
+          </span>
+          <span style="font-family: var(--font-display); font-weight: var(--fw-medium); font-size: 22px; color: var(--orange); line-height: 1;">{{ sv.chev }}</span>
+        </button>
+        <sc-if value="{{ sv.open }}" hint-placeholder-val="{{ false }}">
+          <div style="padding: 0 26px 24px 80px; display: flex; flex-direction: column; gap: 10px;">
+            <sc-for list="{{ sv.bullets }}" as="b" hint-placeholder-count="3">
+              <div style="display: flex; gap: 12px; align-items: baseline;">
+                <span style="color: var(--orange); font-family: var(--font-display); font-size: 14px;">→</span>
+                <span style="font-family: var(--font-text); font-size: 15px; line-height: 1.55; color: var(--text-on-light);">{{ b }}</span>
+              </div>
+            </sc-for>
+          </div>
+        </sc-if>
+      </div>
+    </sc-for>
+  </div>
+
+  <div style="margin-top: 72px; background: var(--cream-sunk); border: 1px solid var(--line-strong); border-radius: var(--radius-md, 12px); padding: 44px 40px;">
+    <div style="font-family: var(--font-display); font-weight: var(--fw-medium); font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--orange); margin-bottom: 26px;">El ciclo trimestral OKR</div>
+    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;">
+      <div style="display: flex; gap: 18px; align-items: baseline;">
+        <span style="font-family: var(--font-display); font-weight: var(--fw-bold); font-size: 52px; line-height: 1; color: var(--night);">1</span>
+        <span><strong style="display: block; font-family: var(--font-display); font-weight: var(--fw-semibold); font-size: 17px; color: var(--night);">Seteo</strong><span style="font-family: var(--font-text); font-size: 14px; color: var(--text-on-light-muted); line-height: 1.5;">Estrategia definida de forma colaborativa</span></span>
+      </div>
+      <div style="display: flex; gap: 18px; align-items: baseline;">
+        <span style="font-family: var(--font-display); font-weight: var(--fw-bold); font-size: 52px; line-height: 1; color: var(--night);">6</span>
+        <span><strong style="display: block; font-family: var(--font-display); font-weight: var(--fw-semibold); font-size: 17px; color: var(--night);">Seguimientos</strong><span style="font-family: var(--font-text); font-size: 14px; color: var(--text-on-light-muted); line-height: 1.5;">Reuniones quincenales con facilitación</span></span>
+      </div>
+      <div style="display: flex; gap: 18px; align-items: baseline;">
+        <span style="font-family: var(--font-display); font-weight: var(--fw-bold); font-size: 52px; line-height: 1; color: var(--night);">1</span>
+        <span><strong style="display: block; font-family: var(--font-display); font-weight: var(--fw-semibold); font-size: 17px; color: var(--night);">Retrospectiva</strong><span style="font-family: var(--font-text); font-size: 14px; color: var(--text-on-light-muted); line-height: 1.5;">Cierre analítico y aprendizajes del ciclo</span></span>
+      </div>
+    </div>
+    <div style="margin-top: 30px;">
+      <x-import component-from-global-scope="AgilBylucasDesignSystem_df17fe.Callout" hint-size="100%,60px">Un proceso de OKRs dura mínimo 4 meses; recomiendo entre 7 y 9. No creo en los consultores eternos.</x-import>
+    </div>
+  </div>
+</section>
+
+<section id="paraquien" data-screen-label="Para quién" style="background: var(--white); border-top: 1px solid var(--line);">
+  <div style="max-width: 1140px; margin: 0 auto; padding: 96px 24px;">
+    <x-import component-from-global-scope="AgilBylucasDesignSystem_df17fe.SectionHeader" kicker="Para quién trabajo" title="Si esto te suena, hablemos." hint-size="100%,110px"></x-import>
+    <div style="display: flex; flex-direction: column; gap: 12px; margin-top: 44px;">
+      <x-import component-from-global-scope="AgilBylucasDesignSystem_df17fe.StepRow" label="01" title="Founders early stage" style="background: var(--cream)" hint-size="100%,58px">con MVP y primeros clientes, listos para validar antes de escalar.</x-import>
+      <x-import component-from-global-scope="AgilBylucasDesignSystem_df17fe.StepRow" label="02" title="Pymes en marcha" style="background: var(--cream)" hint-size="100%,58px">que facturan pero necesitan orden, números claros y foco.</x-import>
+      <x-import component-from-global-scope="AgilBylucasDesignSystem_df17fe.StepRow" label="03" title="Agencias y equipos" style="background: var(--cream)" hint-size="100%,58px">que quieren instalar OKRs y disciplina de ejecución.</x-import>
+      <x-import component-from-global-scope="AgilBylucasDesignSystem_df17fe.StepRow" label="04" title="Instituciones y programas" style="background: var(--cream)" hint-size="100%,58px">incubadoras y universidades que buscan un método probado.</x-import>
+    </div>
+  </div>
+</section>
+
+<section id="contacto" data-screen-label="Contacto" style="background: var(--night);">
+  <div style="max-width: 1140px; margin: 0 auto; padding: 110px 24px 90px; text-align: center;">
+    <div style="font-family: var(--font-display); font-weight: var(--fw-medium); font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--cream); margin-bottom: 18px;">Contacto</div>
+    <h2 style="font-family: var(--font-display); font-weight: var(--fw-bold); font-size: clamp(38px, 4.5vw, 60px); line-height: 1.08; color: var(--cream); margin: 0 0 20px;">¿Trabajamos juntos<span style="color: var(--orange);">?</span></h2>
+    <p style="font-family: var(--font-text); font-size: 17px; line-height: 1.6; color: var(--text-on-dark-muted); max-width: 460px; margin: 0 auto 36px;">Escribime y agendamos una llamada de 30 minutos para conocernos.</p>
+    <div style="display: flex; gap: 14px; justify-content: center; flex-wrap: wrap;">
+      <x-import component-from-global-scope="AgilBylucasDesignSystem_df17fe.Button" variant="primary" size="lg" href="https://linkedin.com/in/lucas-flores-lucero" target="_blank" hint-size="240px,46px">linkedin.com/in/lucas-flores-lucero</x-import>
+      <x-import component-from-global-scope="AgilBylucasDesignSystem_df17fe.Button" variant="outline" size="lg" href="https://instagram.com/agil.bylucas" target="_blank" dc-props="{{ igBtnProps }}" hint-size="170px,46px">@agil.bylucas</x-import>
+    </div>
+    <div style="margin-top: 80px; padding-top: 28px; border-top: 1px solid var(--line-on-dark); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;">
+      <span style="font-family: var(--font-display); font-weight: var(--fw-bold); font-size: 16px; color: var(--cream);">agil<span style="color: var(--orange);">.</span>bylucas</span>
+      <span style="font-family: var(--font-text); font-size: 13px; color: var(--text-faint);">De Mendoza, Argentina para el mundo.</span>
+    </div>
+  </div>
+</section>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{
+  &quot;animaciones&quot;: { &quot;editor&quot;: &quot;boolean&quot;, &quot;default&quot;: true, &quot;tsType&quot;: &quot;boolean&quot;, &quot;section&quot;: &quot;Comportamiento&quot; },
+  &quot;modoServicios&quot;: { &quot;editor&quot;: &quot;enum&quot;, &quot;options&quot;: [&quot;acordeon&quot;, &quot;abierto&quot;], &quot;default&quot;: &quot;acordeon&quot;, &quot;tsType&quot;: &quot;string&quot;, &quot;section&quot;: &quot;Comportamiento&quot; }
+}">
+class Component extends DCLogic {
+  state = { open: 0, counts: [0, 0, 0, 0], counted: false };
+
+  targets = [30, 20, 1500, 10];
+  labels = ["empresas con OKRs", "proyectos incubados", "personas capacitadas", "industrias"];
+
+  serviciosData = [
+    { nombre: "Incubación", sub: "6 semanas · para equipos con MVP o primeros clientes", bullets: ["Del Canvas al Cashflow, con datos reales", "Validación con clientes + prototipado con IA", "Salís con OKRs y roadmap de 90 días"] },
+    { nombre: "Consultoría OKR", sub: "Que las cosas que importan, sucedan", bullets: ["Crear estrategia: propósito → visión → objetivos", "Facilitar seguimientos quincenales a compromisos", "Generar una cultura autónoma de mejora continua"] },
+    { nombre: "Mentoría", sub: "Un socio estratégico para el dueño del negocio", bullets: ["Finanzas, cashflow y propuesta de valor", "Estrategia comercial y marca personal", "Equipo, procesos y delegación"] },
+    { nombre: "IA aplicada", sub: "Herramientas concretas para validar rápidamente", bullets: ["Validación y prototipado acelerados", "Análisis de clientes y feedback", "Automatización de tareas repetitivas"] },
+  ];
+
+  componentDidMount() {
+    if (!this.statsEl) { this.startCount(); return; }
+    this.io = new IntersectionObserver((entries) => {
+      if (entries.some(e => e.isIntersecting)) { this.startCount(); this.io.disconnect(); }
+    }, { threshold: 0.3 });
+    this.io.observe(this.statsEl);
+  }
+  componentWillUnmount() { if (this.io) this.io.disconnect(); }
+
+  startCount() {
+    if (this.state.counted) return;
+    if ((this.props.animaciones ?? true) === false) { this.setState({ counts: this.targets.slice(), counted: true }); return; }
+    const t0 = performance.now(), dur = 1400;
+    const tick = (now) => {
+      const p = Math.min(1, (now - t0) / dur), e = 1 - Math.pow(1 - p, 3);
+      this.setState({ counts: this.targets.map(t => Math.round(t * e)), counted: p >= 1 });
+      if (p < 1) requestAnimationFrame(tick);
+    };
+    requestAnimationFrame(tick);
+  }
+
+  go(id) { return () => { const el = document.getElementById(id); if (el) window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - 64, behavior: "smooth" }); }; }
+
+  renderVals() {
+    const fmt = n => "+" + n.toLocaleString("es-AR");
+    const modo = this.props.modoServicios ?? "acordeon";
+    return {
+      stats: this.targets.map((t, i) => ({ value: fmt(this.state.counted ? t : this.state.counts[i]), label: this.labels[i] })),
+      statsRef: el => { this.statsEl = el; },
+      servicios: this.serviciosData.map((s, i) => {
+        const open = modo === "abierto" ? true : this.state.open === i;
+        return { ...s, num: "0" + (i + 1), open, chev: open ? "–" : "+", border: open ? "var(--orange-soft)" : "var(--line)",
+          onToggle: () => { if (modo !== "abierto") this.setState({ open: this.state.open === i ? -1 : i }); } };
+      }),
+      igBtnProps: { style: { color: "var(--cream)", borderColor: "var(--line-on-dark)" } },
+      goQuien: this.go("quien"), goMetodo: this.go("metodo"), goServicios: this.go("servicios"),
+      goParaQuien: this.go("paraquien"), goContacto: this.go("contacto"),
+    };
+  }
+}
+</script>
+</body>
+</html>
