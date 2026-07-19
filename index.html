@@ -117,8 +117,9 @@
       header[data-screen-label="Hero"] [style*="display: flex; gap: 14px"] { flex-wrap: wrap !important; }
 
       /* Contacto: cards de redes apiladas a ancho completo */
-      .agil-social-links { flex-direction: column !important; }
-      .agil-social-links a { max-width: none !important; width: 100% !important; }
+      .agil-social-links { flex-direction: column !important; gap: 10px !important; }
+      .agil-social-links a { flex-basis: auto !important; max-width: none !important; width: 100% !important; padding: 12px 18px !important; font-size: 14px !important; }
+      .agil-social-links a svg { width: 17px !important; height: 17px !important; }
     }
     @media (max-width: 400px) {
       [style*="grid-template-columns: repeat(4, 1fr)"] { grid-template-columns: 1fr !important; }
