@@ -120,6 +120,13 @@
       .agil-social-links { flex-direction: column !important; gap: 10px !important; }
       .agil-social-links a { flex-basis: auto !important; max-width: none !important; width: 100% !important; padding: 12px 18px !important; font-size: 14px !important; }
       .agil-social-links a svg { width: 17px !important; height: 17px !important; }
+
+      /* Colaboraciones: gap reducido, logos un paso más chicos */
+      .agil-collab-logos { gap: 48px !important; }
+      .agil-collab-logos img { height: auto !important; max-height: 44px; }
+      .agil-collab-logos a[aria-label="Embarca"] img { height: 36px !important; }
+      .agil-collab-logos a[aria-label="Master Me Up"] img { height: 44px !important; }
+      .agil-collab-logos a[aria-label="Scalynn"] img { height: 32px !important; }
     }
     @media (max-width: 400px) {
       [style*="grid-template-columns: repeat(4, 1fr)"] { grid-template-columns: 1fr !important; }
@@ -137,6 +144,17 @@
     }
     .agil-social-links a:hover { border-color: var(--orange); color: var(--orange); }
     .agil-social-links a svg { flex-shrink: 0; }
+
+    /* Colaboraciones: logos */
+    .agil-collab-logos a {
+      display: block; opacity: 0.92;
+      transition: opacity .2s ease-out, transform .2s ease-out;
+    }
+    .agil-collab-logos a:hover { opacity: 1; transform: translateY(-2px); }
+    .agil-collab-logos a:focus-visible {
+      outline: 2px solid var(--orange); outline-offset: 6px;
+      border-radius: 4px; opacity: 1;
+    }
   </style>
 </helmet>
 
@@ -298,6 +316,24 @@
       <x-import component-from-global-scope="AgilBylucasDesignSystem_df17fe.StepRow" label="02" title="Pymes en marcha" style="background: var(--cream)" hint-size="100%,58px">que facturan pero necesitan orden, números claros y foco.</x-import>
       <x-import component-from-global-scope="AgilBylucasDesignSystem_df17fe.StepRow" label="03" title="Agencias y equipos" style="background: var(--cream)" hint-size="100%,58px">que quieren instalar OKRs y disciplina de ejecución.</x-import>
       <x-import component-from-global-scope="AgilBylucasDesignSystem_df17fe.StepRow" label="04" title="Instituciones y programas" style="background: var(--cream)" hint-size="100%,58px">incubadoras y universidades que buscan un método probado.</x-import>
+    </div>
+  </div>
+</section>
+
+<section id="colaboraciones" data-screen-label="Colaboraciones" style="background: var(--night); border-top: 1px solid var(--line-on-dark);">
+  <div style="max-width: 1140px; margin: 0 auto; padding: 68px 24px; text-align: center;">
+    <div style="font-family: var(--font-display); font-weight: var(--fw-medium); font-size: 13px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--orange); margin-bottom: 18px;">Empresas donde colaboro</div>
+    <p style="font-family: var(--font-text); font-size: 16px; line-height: 1.65; color: var(--text-on-dark-muted); max-width: 640px; margin: 0 auto 48px;">Mi trabajo impacta también en otras consultoras y agencias. Colaboro con estas organizaciones sumando estrategia, OKRs e IA aplicada a sus proyectos y clientes.</p>
+    <div class="agil-collab-logos" style="display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 88px;">
+      <a href="https://www.embarca.tech/" target="_blank" rel="noopener noreferrer" aria-label="Embarca">
+        <img src="assets/logo-embarca-cream-crop.png" alt="Embarca" style="height: 44px; width: auto; display: block;">
+      </a>
+      <a href="https://mastermeup.com/" target="_blank" rel="noopener noreferrer" aria-label="Master Me Up">
+        <img src="assets/logo-mmu-cream-crop.png" alt="Master Me Up" style="height: 56px; width: auto; display: block;">
+      </a>
+      <a href="https://www.scalynn.com/" target="_blank" rel="noopener noreferrer" aria-label="Scalynn">
+        <img src="assets/logo-scalynn-cream-crop.png" alt="Scalynn" style="height: 40px; width: auto; display: block;">
+      </a>
     </div>
   </div>
 </section>
