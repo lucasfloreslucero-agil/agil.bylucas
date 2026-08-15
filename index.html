@@ -120,9 +120,8 @@
       .agil-steprow { gap: 14px !important; padding: 16px 18px !important; }
       .agil-steprow > span:first-child { flex: 0 0 auto !important; font-size: 15px !important; }
 
-      /* Formaciones: logos en filas de a dos, un paso más chicos */
-      .agil-fl-row { flex-wrap: wrap !important; gap: 36px 48px !important; }
-      .agil-fl-cell { height: 56px !important; }
+      /* Formaciones: marquee un paso más chico */
+      .agil-fl-cell { height: 74px !important; padding: 0 24px !important; }
       .agil-fl-cell img { height: calc(var(--lh) * 0.8) !important; }
 
       /* Contacto: cards de redes apiladas a ancho completo */
@@ -141,10 +140,17 @@
       [style*="grid-template-columns: repeat(4, 1fr)"] { grid-template-columns: 1fr !important; }
     }
 
-    /* Formaciones y charlas: celdas de logos */
-    .agil-fl-row { display: flex; align-items: center; justify-content: center; }
-    .agil-fl-cell { height: 72px; display: flex; align-items: center; justify-content: center; }
+    /* Formaciones y charlas: marquee de logos */
+    .agil-fl-marquee {
+      overflow: hidden;
+      -webkit-mask-image: linear-gradient(90deg, transparent, #000 7%, #000 93%, transparent);
+      mask-image: linear-gradient(90deg, transparent, #000 7%, #000 93%, transparent);
+    }
+    .agil-fl-track { display: flex; width: max-content; animation: om-marquee 46s linear infinite; }
+    .agil-fl-cell { height: 92px; padding: 0 40px; flex: none; display: flex; align-items: center; justify-content: center; }
     .agil-fl-cell img { height: var(--lh); width: auto; object-fit: contain; display: block; opacity: 0.9; }
+    @keyframes om-marquee { from { transform: translate3d(0, 0, 0); } to { transform: translate3d(-50%, 0, 0); } }
+    @media (prefers-reduced-motion: reduce) { .agil-fl-track { animation: none; } }
 
     /* Contacto: botones de redes sociales */
     .agil-social-links a {
@@ -356,16 +362,31 @@
   <div style="max-width: 1140px; margin: 0 auto; padding: 68px 24px; text-align: center;">
     <div style="font-family: var(--font-display); font-weight: var(--fw-medium); font-size: 13px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--orange); margin-bottom: 18px;">Formaciones y charlas</div>
     <p style="font-family: var(--font-text); font-size: 16px; line-height: 1.65; color: var(--text-on-dark-muted); max-width: 620px; margin: 0 auto 48px;">Más de 1.500 personas capacitadas en metodologías ágiles, planificación estratégica y liderazgo en universidades, bootcamps y conferencias.</p>
-    <div class="agil-fl-row" style="gap: 76px;">
-      <div class="agil-fl-cell"><img src="assets/formaciones/1-coderhouse.svg" alt="Coderhouse" style="--lh: 34px;"></div>
-      <div class="agil-fl-cell"><img src="assets/formaciones/2-alkemy.png" alt="Alkemy" style="--lh: 28px;"></div>
-      <div class="agil-fl-cell"><img src="assets/formaciones/3-empleotecnia.png" alt="Empleotecnia" style="--lh: 36px;"></div>
-      <div class="agil-fl-cell"><img src="assets/formaciones/4-uncuyo.png" alt="UNCuyo — Universidad Nacional de Cuyo" style="--lh: 36px;"></div>
-    </div>
-    <div class="agil-fl-row" style="gap: 96px; margin-top: 52px;">
-      <div class="agil-fl-cell"><img src="assets/formaciones/5-ucse.png" alt="UCSE — Universidad Católica de Santiago del Estero" style="--lh: 68px;"></div>
-      <div class="agil-fl-cell"><img src="assets/formaciones/6-aareii.png" alt="AArEII — Asociación Argentina de Estudiantes de Ingeniería Industrial" style="--lh: 70px;"></div>
-      <div class="agil-fl-cell"><img src="assets/formaciones/7-nerdconf.png" alt="Nerdconf" style="--lh: 52px;"></div>
+    <div class="agil-fl-marquee">
+      <div class="agil-fl-track">
+        <!-- secuencia visible -->
+        <div class="agil-fl-cell"><img src="assets/formaciones/1-coderhouse.svg" alt="Coderhouse" style="--lh: 42px;"></div>
+        <div class="agil-fl-cell"><img src="assets/formaciones/2-alkemy.png" alt="Alkemy" style="--lh: 28px;"></div>
+        <div class="agil-fl-cell"><img src="assets/formaciones/3-empleotecnia.png" alt="Empleotecnia" style="--lh: 36px;"></div>
+        <div class="agil-fl-cell"><img src="assets/formaciones/4-uncuyo.png" alt="UNCuyo — Universidad Nacional de Cuyo" style="--lh: 44px;"></div>
+        <div class="agil-fl-cell"><img src="assets/formaciones/5-ucse.png" alt="UCSE — Universidad Católica de Santiago del Estero" style="--lh: 62px;"></div>
+        <div class="agil-fl-cell"><img src="assets/formaciones/6-aareii.png" alt="AArEII — Asociación Argentina de Estudiantes de Ingeniería Industrial" style="--lh: 66px;"></div>
+        <div class="agil-fl-cell"><img src="assets/formaciones/7-nerdconf.png" alt="Nerdconf" style="--lh: 46px;"></div>
+        <div class="agil-fl-cell"><img src="assets/formaciones/8-incubadora-uncuyo.png" alt="Incubadora UNCuyo" style="--lh: 34px;"></div>
+        <div class="agil-fl-cell"><img src="assets/formaciones/9-instituto-alba-edison.png" alt="Instituto Tomás Alva Edison" style="--lh: 80px;"></div>
+        <div class="agil-fl-cell"><img src="assets/formaciones/10-skillup.png" alt="Skill Up" style="--lh: 44px;"></div>
+        <!-- duplicado para el loop (decorativo) -->
+        <div class="agil-fl-cell"><img src="assets/formaciones/1-coderhouse.svg" alt="" aria-hidden="true" style="--lh: 42px;"></div>
+        <div class="agil-fl-cell"><img src="assets/formaciones/2-alkemy.png" alt="" aria-hidden="true" style="--lh: 28px;"></div>
+        <div class="agil-fl-cell"><img src="assets/formaciones/3-empleotecnia.png" alt="" aria-hidden="true" style="--lh: 36px;"></div>
+        <div class="agil-fl-cell"><img src="assets/formaciones/4-uncuyo.png" alt="" aria-hidden="true" style="--lh: 44px;"></div>
+        <div class="agil-fl-cell"><img src="assets/formaciones/5-ucse.png" alt="" aria-hidden="true" style="--lh: 62px;"></div>
+        <div class="agil-fl-cell"><img src="assets/formaciones/6-aareii.png" alt="" aria-hidden="true" style="--lh: 66px;"></div>
+        <div class="agil-fl-cell"><img src="assets/formaciones/7-nerdconf.png" alt="" aria-hidden="true" style="--lh: 46px;"></div>
+        <div class="agil-fl-cell"><img src="assets/formaciones/8-incubadora-uncuyo.png" alt="" aria-hidden="true" style="--lh: 34px;"></div>
+        <div class="agil-fl-cell"><img src="assets/formaciones/9-instituto-alba-edison.png" alt="" aria-hidden="true" style="--lh: 80px;"></div>
+        <div class="agil-fl-cell"><img src="assets/formaciones/10-skillup.png" alt="" aria-hidden="true" style="--lh: 44px;"></div>
+      </div>
     </div>
   </div>
 </section>

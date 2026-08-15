@@ -1,0 +1,33 @@
+Formaciones y charlas — logos agil.bylucas
+==========================================
+
+Tinta crema #F5EDE0, fondo transparente, recortados a los límites del
+contenido (sin padding). En orden de aparición, con la altura de render:
+
+  1-coderhouse.svg              42px   vectorial, fill #F5EDE0
+  2-alkemy.png                  28px
+  3-empleotecnia.png            36px
+  4-uncuyo.png                  44px
+  5-ucse.png                    62px
+  6-aareii.png                  66px
+  7-nerdconf.png                46px
+  8-incubadora-uncuyo.png       34px
+  9-instituto-alba-edison.png   80px
+ 10-skillup.png                 44px
+
+Las alturas están equilibradas ópticamente, no por dimensiones iguales:
+los wordmarks anchos van más bajos y las marcas circulares o cuadradas
+más altas. No normalizar a una sola altura.
+
+Casos especiales
+----------------
+5-ucse: recortado al escudo con las letras UCSE. El lockup completo
+(dos líneas + lema en itálica) es ilegible por debajo de ~90px de alto.
+
+6-aareii y 9-instituto-alba-edison: tiles de dos tintas del sistema
+(crema + night blue #031927). Son marcas en negativo sobre color y no
+funcionan como silueta de una sola tinta; el fondo navy se funde con el
+de la sección. El sello de Alba Edison necesita 80px como mínimo: por
+debajo de ~76px el texto del anillo se vuelve ilegible.
+
+Fuente: originales en /uploads. Todos los derivados se regeneran desde ahí.
