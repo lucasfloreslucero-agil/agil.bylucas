@@ -116,6 +116,10 @@
       /* Botones del hero apilados */
       header[data-screen-label="Hero"] [style*="display: flex; gap: 14px"] { flex-wrap: wrap !important; }
 
+      /* Para quién: el número no necesita una columna de 108px */
+      .agil-steprow { gap: 14px !important; padding: 16px 18px !important; }
+      .agil-steprow > span:first-child { flex: 0 0 auto !important; font-size: 15px !important; }
+
       /* Formaciones: logos en filas de a dos, un paso más chicos */
       .agil-fl-row { flex-wrap: wrap !important; gap: 36px 48px !important; }
       .agil-fl-cell { height: 56px !important; }
