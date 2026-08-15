@@ -1,0 +1,40 @@
+Consultoría e incubación — logos agil.bylucas
+=============================================
+
+Tinta crema #F5EDE0, fondo transparente, recortados a los límites del
+contenido (sin padding). Tinta plena: sin medios tonos ni degradados,
+para que todos pesen igual sobre el night blue.
+
+En orden de aparición, con la altura de render:
+
+  01-abarca-distribuidora.png   26px
+  02-kafe-sistemas.png          34px
+  03-agilmentor.png             54px
+  04-ares-argentina.png         32px
+  05-vendimia-tech.png          48px
+  06-mendoza-icons.png          52px
+  07-quivra.png                 38px
+  08-alca-idiomas.png           42px
+  09-pencilbox.png              22px
+  10-flumit.png                 30px
+  11-3ng-tech.png               24px
+  12-inca-empresa-junior.png    58px
+  13-vantablack-studio.png      54px
+  14-blackbear-contents.png     46px
+  15-col-sa.png                 34px
+  16-defihaus.png               34px
+  17-chest-music.png            30px
+
+Las alturas están equilibradas ópticamente, no por dimensiones iguales:
+los wordmarks anchos van más bajos y las marcas circulares o cuadradas
+más altas. No normalizar a una sola altura.
+
+Notas
+-----
+04-ares: recortado al isotipo + "ARES". La bajada ("Investigación
+Aplicada y Soluciones de Ingeniería") es ilegible a este tamaño.
+
+12-inca: recortado al isotipo + "INCA", sin la línea "Empresa Junior",
+por el mismo motivo.
+
+Fuente: originales en /uploads. Todos los derivados se regeneran desde ahí.
