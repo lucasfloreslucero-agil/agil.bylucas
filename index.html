@@ -116,6 +116,11 @@
       /* Botones del hero apilados */
       header[data-screen-label="Hero"] [style*="display: flex; gap: 14px"] { flex-wrap: wrap !important; }
 
+      /* Formaciones: logos en filas de a dos, un paso más chicos */
+      .agil-fl-row { flex-wrap: wrap !important; gap: 36px 48px !important; }
+      .agil-fl-cell { height: 56px !important; }
+      .agil-fl-cell img { height: calc(var(--lh) * 0.8) !important; }
+
       /* Contacto: cards de redes apiladas a ancho completo */
       .agil-social-links { flex-direction: column !important; gap: 10px !important; }
       .agil-social-links a { flex-basis: auto !important; max-width: none !important; width: 100% !important; padding: 12px 18px !important; font-size: 14px !important; }
@@ -131,6 +136,11 @@
     @media (max-width: 400px) {
       [style*="grid-template-columns: repeat(4, 1fr)"] { grid-template-columns: 1fr !important; }
     }
+
+    /* Formaciones y charlas: celdas de logos */
+    .agil-fl-row { display: flex; align-items: center; justify-content: center; }
+    .agil-fl-cell { height: 72px; display: flex; align-items: center; justify-content: center; }
+    .agil-fl-cell img { height: var(--lh); width: auto; object-fit: contain; display: block; opacity: 0.9; }
 
     /* Contacto: botones de redes sociales */
     .agil-social-links a {
@@ -334,6 +344,24 @@
       <a href="https://www.scalynn.com/" target="_blank" rel="noopener noreferrer" aria-label="Scalynn">
         <img src="assets/logo-scalynn-cream-crop.png" alt="Scalynn" style="height: 40px; width: auto; display: block;">
       </a>
+    </div>
+  </div>
+</section>
+
+<section id="formaciones" data-screen-label="Formaciones y charlas" style="background: var(--night); border-top: 1px solid var(--line-on-dark);">
+  <div style="max-width: 1140px; margin: 0 auto; padding: 68px 24px; text-align: center;">
+    <div style="font-family: var(--font-display); font-weight: var(--fw-medium); font-size: 13px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--orange); margin-bottom: 18px;">Formaciones y charlas</div>
+    <p style="font-family: var(--font-text); font-size: 16px; line-height: 1.65; color: var(--text-on-dark-muted); max-width: 620px; margin: 0 auto 48px;">Más de 1.500 personas capacitadas en metodologías ágiles, planificación estratégica y liderazgo en universidades, bootcamps y conferencias.</p>
+    <div class="agil-fl-row" style="gap: 76px;">
+      <div class="agil-fl-cell"><img src="assets/formaciones/1-coderhouse.svg" alt="Coderhouse" style="--lh: 34px;"></div>
+      <div class="agil-fl-cell"><img src="assets/formaciones/2-alkemy.png" alt="Alkemy" style="--lh: 28px;"></div>
+      <div class="agil-fl-cell"><img src="assets/formaciones/3-empleotecnia.png" alt="Empleotecnia" style="--lh: 36px;"></div>
+      <div class="agil-fl-cell"><img src="assets/formaciones/4-uncuyo.png" alt="UNCuyo — Universidad Nacional de Cuyo" style="--lh: 36px;"></div>
+    </div>
+    <div class="agil-fl-row" style="gap: 96px; margin-top: 52px;">
+      <div class="agil-fl-cell"><img src="assets/formaciones/5-ucse.png" alt="UCSE — Universidad Católica de Santiago del Estero" style="--lh: 68px;"></div>
+      <div class="agil-fl-cell"><img src="assets/formaciones/6-aareii.png" alt="AArEII — Asociación Argentina de Estudiantes de Ingeniería Industrial" style="--lh: 70px;"></div>
+      <div class="agil-fl-cell"><img src="assets/formaciones/7-nerdconf.png" alt="Nerdconf" style="--lh: 52px;"></div>
     </div>
   </div>
 </section>
