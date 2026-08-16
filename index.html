@@ -4,6 +4,15 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-BNQL6Q9EQ2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-BNQL6Q9EQ2');
+</script>
+
 <!-- SEO -->
 <title>agil.bylucas — Consultoría de estrategia, OKRs e incubación de negocios</title>
 <meta name="description" content="Métodos y herramientas para que founders y pymes validen, ordenen su estrategia y crezcan con foco. Consultoría OKR, incubación, mentoría e IA aplicada. Por Lucas Flores Lucero, desde Mendoza, Argentina.">
@@ -527,6 +536,94 @@ class Component extends DCLogic {
     };
   }
 }
+</script>
+
+<!-- Eventos GA4. Todo va envuelto para que un adblocker que bloquee gtag
+     no interrumpa la navegación: los links siguen siendo links. -->
+<script>
+(function () {
+  function track(nombre, params) {
+    try {
+      if (typeof window.gtag === 'function') window.gtag('event', nombre, params || {});
+    } catch (e) { /* nunca frenar la interacción por el tracking */ }
+  }
+
+  // Delegación en fase de captura: el acordeón se re-renderiza al hacer clic,
+  // así leemos su estado antes de que cambie.
+  document.addEventListener('click', function (e) {
+    try {
+      var t = e.target;
+      if (!t || !t.closest) return;
+
+      var calendly = t.closest('a[href*="calendly.com"]');
+      if (calendly) {
+        track('click_calendly', { ubicacion: calendly.closest('#contacto') ? 'contacto' : 'hero' });
+        return;
+      }
+
+      var red = t.closest('.agil-social-links a');
+      if (red) {
+        var href = red.getAttribute('href') || '';
+        if (href.indexOf('linkedin') !== -1) track('click_linkedin');
+        else if (href.indexOf('instagram') !== -1) track('click_instagram');
+        return;
+      }
+
+      var item = t.closest('#servicios button');
+      if (item) {
+        var hijos = item.children;
+        // El chevron muestra el estado actual: "+" cerrado, "–" abierto.
+        // Sólo interesa la apertura, no el cierre.
+        var chev = hijos.length > 2 ? (hijos[2].textContent || '').trim() : '';
+        if (chev && chev !== '+') return;
+        var bloque = hijos.length > 1 ? hijos[1] : null;
+        var nombre = bloque && bloque.children.length
+          ? bloque.children[0].textContent
+          : (bloque ? bloque.textContent : '');
+        nombre = (nombre || '').trim().split('\n')[0].trim();
+        if (nombre) track('click_servicio', { servicio: nombre });
+      }
+    } catch (e) { /* ignorar */ }
+  }, true);
+
+  // El framework monta la sección y reemplaza el nodo al renderizar, así que
+  // no alcanza con observarlo una vez: hay que re-observar el nodo vigente.
+  var disparado = false, nodo = null, obs = null, intentos = 0, timer = null;
+
+  function alIntersectar(entradas) {
+    for (var i = 0; i < entradas.length; i++) {
+      if (entradas[i].isIntersecting) {
+        disparado = true;
+        track('scroll_contacto');
+        if (obs) obs.disconnect();
+        if (timer) clearInterval(timer);
+        return;
+      }
+    }
+  }
+
+  function conectar() {
+    try {
+      if (disparado) return;
+      var contacto = document.getElementById('contacto');
+      if (!contacto || contacto === nodo) return;
+      if (obs) obs.disconnect();
+      nodo = contacto;
+      obs = new IntersectionObserver(alIntersectar, { threshold: 0.25 });
+      obs.observe(contacto);
+    } catch (e) { /* ignorar */ }
+  }
+
+  if ('IntersectionObserver' in window) {
+    conectar();
+    // Sólo para reenganchar tras los re-renders iniciales; el observer en sí
+    // queda activo aunque el visitante tarde en llegar al final.
+    timer = setInterval(function () {
+      conectar();
+      if (disparado || ++intentos > 60) clearInterval(timer);
+    }, 500);
+  }
+})();
 </script>
 </body>
 </html>
