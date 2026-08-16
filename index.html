@@ -95,7 +95,9 @@
     @keyframes agilFadeUp { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
 
     /* ===== Responsive (mobile) ===== */
-    img { max-width: 100%; }
+    /* height:auto acompaña a los atributos width/height: sin él, cuando
+       max-width achica la imagen la altura queda fija y se deforma. */
+    img { max-width: 100%; height: auto; }
     @media (max-width: 820px) {
       /* Nav: en móvil solo logo + CTA */
       nav [style*="margin-left: auto"] > button { display: none !important; }
@@ -222,7 +224,7 @@
     </div>
   </div>
   <div style="position: relative; border-radius: var(--radius-md, 12px); overflow: hidden; box-shadow: var(--shadow-md); aspect-ratio: 4 / 5; animation: agilFadeUp .6s .12s var(--ease-out, ease-out) both;">
-    <img src="assets/lucas-portrait.webp" alt="Lucas Flores Lucero" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+    <img width="637" height="900" loading="eager" fetchpriority="high" src="assets/lucas-portrait.webp" alt="Lucas Flores Lucero" style="width: 100%; height: 100%; object-fit: cover; display: block;">
     <div style="position: absolute; left: 0; right: 0; bottom: 0; height: 45%; background: linear-gradient(to top, rgba(3,25,39,.75), transparent);"></div>
     <div style="position: absolute; left: 18px; bottom: 18px; right: 18px; color: var(--cream);">
       <div style="font-family: var(--font-display); font-weight: var(--fw-bold); font-size: 20px;">Lucas Flores Lucero</div>
@@ -360,13 +362,13 @@
     <p style="font-family: var(--font-text); font-size: 16px; line-height: 1.65; color: var(--text-on-dark-muted); max-width: 640px; margin: 0 auto 48px;">Mi trabajo impacta también en otras consultoras y agencias. Colaboro con estas organizaciones sumando estrategia, OKRs e IA aplicada a sus proyectos y clientes.</p>
     <div class="agil-collab-logos" style="display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 88px;">
       <a href="https://www.embarca.tech/" target="_blank" rel="noopener noreferrer" aria-label="Embarca">
-        <img src="assets/logo-embarca-cream-crop.png" alt="Embarca" style="height: 44px; width: auto; display: block;">
+        <img width="400" height="101" loading="lazy" decoding="async" src="assets/logo-embarca-cream-crop.webp" alt="Embarca" style="height: 44px; width: auto; display: block;">
       </a>
       <a href="https://mastermeup.com/" target="_blank" rel="noopener noreferrer" aria-label="Master Me Up">
-        <img src="assets/logo-mmu-cream-crop.png" alt="Master Me Up" style="height: 56px; width: auto; display: block;">
+        <img width="400" height="110" loading="lazy" decoding="async" src="assets/logo-mmu-cream-crop.webp" alt="Master Me Up" style="height: 56px; width: auto; display: block;">
       </a>
       <a href="https://www.scalynn.com/" target="_blank" rel="noopener noreferrer" aria-label="Scalynn">
-        <img src="assets/logo-scalynn-cream-crop.png" alt="Scalynn" style="height: 40px; width: auto; display: block;">
+        <img width="400" height="93" loading="lazy" decoding="async" src="assets/logo-scalynn-cream-crop.webp" alt="Scalynn" style="height: 40px; width: auto; display: block;">
       </a>
     </div>
   </div>
@@ -379,41 +381,41 @@
     <div class="agil-fl-marquee">
       <div class="agil-fl-track agil-ci-track">
         <!-- secuencia visible -->
-        <div class="agil-fl-cell agil-ci-cell"><img src="assets/consultoria-e-incubacion/01-abarca-distribuidora.png" alt="Abarca Distribuidora" style="--lh: 26px;"></div>
-        <div class="agil-fl-cell agil-ci-cell"><img src="assets/consultoria-e-incubacion/02-kafe-sistemas.png" alt="Kafe Sistemas" style="--lh: 34px;"></div>
-        <div class="agil-fl-cell agil-ci-cell"><img src="assets/consultoria-e-incubacion/03-agilmentor.png" alt="AgilMentor" style="--lh: 54px;"></div>
-        <div class="agil-fl-cell agil-ci-cell"><img src="assets/consultoria-e-incubacion/04-ares-argentina.png" alt="Ares Argentina" style="--lh: 32px;"></div>
-        <div class="agil-fl-cell agil-ci-cell"><img src="assets/consultoria-e-incubacion/05-vendimia-tech.png" alt="Vendimia Tech" style="--lh: 48px;"></div>
-        <div class="agil-fl-cell agil-ci-cell"><img src="assets/consultoria-e-incubacion/06-mendoza-icons.png" alt="Mendoza Icons" style="--lh: 52px;"></div>
-        <div class="agil-fl-cell agil-ci-cell"><img src="assets/consultoria-e-incubacion/07-quivra.png" alt="Quivra" style="--lh: 38px;"></div>
-        <div class="agil-fl-cell agil-ci-cell"><img src="assets/consultoria-e-incubacion/08-alca-idiomas.png" alt="Alca Idiomas" style="--lh: 42px;"></div>
-        <div class="agil-fl-cell agil-ci-cell"><img src="assets/consultoria-e-incubacion/09-pencilbox.png" alt="Pencilbox" style="--lh: 22px;"></div>
-        <div class="agil-fl-cell agil-ci-cell"><img src="assets/consultoria-e-incubacion/10-flumit.png" alt="Flumit" style="--lh: 30px;"></div>
-        <div class="agil-fl-cell agil-ci-cell"><img src="assets/consultoria-e-incubacion/11-3ng-tech.png" alt="3NG Tech" style="--lh: 24px;"></div>
-        <div class="agil-fl-cell agil-ci-cell"><img src="assets/consultoria-e-incubacion/12-inca-empresa-junior.png" alt="INCA Empresa Junior" style="--lh: 58px;"></div>
-        <div class="agil-fl-cell agil-ci-cell"><img src="assets/consultoria-e-incubacion/13-vantablack-studio.png" alt="Vantablack Studio" style="--lh: 54px;"></div>
-        <div class="agil-fl-cell agil-ci-cell"><img src="assets/consultoria-e-incubacion/14-blackbear-contents.png" alt="Blackbear Contents" style="--lh: 46px;"></div>
-        <div class="agil-fl-cell agil-ci-cell"><img src="assets/consultoria-e-incubacion/15-col-sa.png" alt="COL S.A." style="--lh: 34px;"></div>
-        <div class="agil-fl-cell agil-ci-cell"><img src="assets/consultoria-e-incubacion/16-defihaus.png" alt="DefiHaus" style="--lh: 34px;"></div>
-        <div class="agil-fl-cell agil-ci-cell"><img src="assets/consultoria-e-incubacion/17-chest-music.png" alt="Chest Music" style="--lh: 30px;"></div>
+        <div class="agil-fl-cell agil-ci-cell"><img width="356" height="50" loading="lazy" decoding="async" src="assets/consultoria-e-incubacion/01-abarca-distribuidora.webp" alt="Abarca Distribuidora" style="--lh: 26px;"></div>
+        <div class="agil-fl-cell agil-ci-cell"><img width="640" height="242" loading="lazy" decoding="async" src="assets/consultoria-e-incubacion/02-kafe-sistemas.webp" alt="Kafe Sistemas" style="--lh: 34px;"></div>
+        <div class="agil-fl-cell agil-ci-cell"><img width="327" height="327" loading="lazy" decoding="async" src="assets/consultoria-e-incubacion/03-agilmentor.webp" alt="AgilMentor" style="--lh: 54px;"></div>
+        <div class="agil-fl-cell agil-ci-cell"><img width="189" height="40" loading="lazy" decoding="async" src="assets/consultoria-e-incubacion/04-ares-argentina.webp" alt="Ares Argentina" style="--lh: 32px;"></div>
+        <div class="agil-fl-cell agil-ci-cell"><img width="265" height="212" loading="lazy" decoding="async" src="assets/consultoria-e-incubacion/05-vendimia-tech.webp" alt="Vendimia Tech" style="--lh: 48px;"></div>
+        <div class="agil-fl-cell agil-ci-cell"><img width="395" height="395" loading="lazy" decoding="async" src="assets/consultoria-e-incubacion/06-mendoza-icons.webp" alt="Mendoza Icons" style="--lh: 52px;"></div>
+        <div class="agil-fl-cell agil-ci-cell"><img width="614" height="283" loading="lazy" decoding="async" src="assets/consultoria-e-incubacion/07-quivra.webp" alt="Quivra" style="--lh: 38px;"></div>
+        <div class="agil-fl-cell agil-ci-cell"><img width="351" height="108" loading="lazy" decoding="async" src="assets/consultoria-e-incubacion/08-alca-idiomas.webp" alt="Alca Idiomas" style="--lh: 42px;"></div>
+        <div class="agil-fl-cell agil-ci-cell"><img width="655" height="103" loading="lazy" decoding="async" src="assets/consultoria-e-incubacion/09-pencilbox.webp" alt="Pencilbox" style="--lh: 22px;"></div>
+        <div class="agil-fl-cell agil-ci-cell"><img width="129" height="33" loading="lazy" decoding="async" src="assets/consultoria-e-incubacion/10-flumit.webp" alt="Flumit" style="--lh: 30px;"></div>
+        <div class="agil-fl-cell agil-ci-cell"><img width="352" height="58" loading="lazy" decoding="async" src="assets/consultoria-e-incubacion/11-3ng-tech.webp" alt="3NG Tech" style="--lh: 24px;"></div>
+        <div class="agil-fl-cell agil-ci-cell"><img width="214" height="311" loading="lazy" decoding="async" src="assets/consultoria-e-incubacion/12-inca-empresa-junior.webp" alt="INCA Empresa Junior" style="--lh: 58px;"></div>
+        <div class="agil-fl-cell agil-ci-cell"><img width="231" height="242" loading="lazy" decoding="async" src="assets/consultoria-e-incubacion/13-vantablack-studio.webp" alt="Vantablack Studio" style="--lh: 54px;"></div>
+        <div class="agil-fl-cell agil-ci-cell"><img width="182" height="121" loading="lazy" decoding="async" src="assets/consultoria-e-incubacion/14-blackbear-contents.webp" alt="Blackbear Contents" style="--lh: 46px;"></div>
+        <div class="agil-fl-cell agil-ci-cell"><img width="198" height="69" loading="lazy" decoding="async" src="assets/consultoria-e-incubacion/15-col-sa.webp" alt="COL S.A." style="--lh: 34px;"></div>
+        <div class="agil-fl-cell agil-ci-cell"><img width="954" height="288" loading="lazy" decoding="async" src="assets/consultoria-e-incubacion/16-defihaus.webp" alt="DefiHaus" style="--lh: 34px;"></div>
+        <div class="agil-fl-cell agil-ci-cell"><img width="378" height="76" loading="lazy" decoding="async" src="assets/consultoria-e-incubacion/17-chest-music.webp" alt="Chest Music" style="--lh: 30px;"></div>
         <!-- duplicado para el loop (decorativo) -->
-        <div class="agil-fl-cell agil-ci-cell"><img src="assets/consultoria-e-incubacion/01-abarca-distribuidora.png" alt="" aria-hidden="true" style="--lh: 26px;"></div>
-        <div class="agil-fl-cell agil-ci-cell"><img src="assets/consultoria-e-incubacion/02-kafe-sistemas.png" alt="" aria-hidden="true" style="--lh: 34px;"></div>
-        <div class="agil-fl-cell agil-ci-cell"><img src="assets/consultoria-e-incubacion/03-agilmentor.png" alt="" aria-hidden="true" style="--lh: 54px;"></div>
-        <div class="agil-fl-cell agil-ci-cell"><img src="assets/consultoria-e-incubacion/04-ares-argentina.png" alt="" aria-hidden="true" style="--lh: 32px;"></div>
-        <div class="agil-fl-cell agil-ci-cell"><img src="assets/consultoria-e-incubacion/05-vendimia-tech.png" alt="" aria-hidden="true" style="--lh: 48px;"></div>
-        <div class="agil-fl-cell agil-ci-cell"><img src="assets/consultoria-e-incubacion/06-mendoza-icons.png" alt="" aria-hidden="true" style="--lh: 52px;"></div>
-        <div class="agil-fl-cell agil-ci-cell"><img src="assets/consultoria-e-incubacion/07-quivra.png" alt="" aria-hidden="true" style="--lh: 38px;"></div>
-        <div class="agil-fl-cell agil-ci-cell"><img src="assets/consultoria-e-incubacion/08-alca-idiomas.png" alt="" aria-hidden="true" style="--lh: 42px;"></div>
-        <div class="agil-fl-cell agil-ci-cell"><img src="assets/consultoria-e-incubacion/09-pencilbox.png" alt="" aria-hidden="true" style="--lh: 22px;"></div>
-        <div class="agil-fl-cell agil-ci-cell"><img src="assets/consultoria-e-incubacion/10-flumit.png" alt="" aria-hidden="true" style="--lh: 30px;"></div>
-        <div class="agil-fl-cell agil-ci-cell"><img src="assets/consultoria-e-incubacion/11-3ng-tech.png" alt="" aria-hidden="true" style="--lh: 24px;"></div>
-        <div class="agil-fl-cell agil-ci-cell"><img src="assets/consultoria-e-incubacion/12-inca-empresa-junior.png" alt="" aria-hidden="true" style="--lh: 58px;"></div>
-        <div class="agil-fl-cell agil-ci-cell"><img src="assets/consultoria-e-incubacion/13-vantablack-studio.png" alt="" aria-hidden="true" style="--lh: 54px;"></div>
-        <div class="agil-fl-cell agil-ci-cell"><img src="assets/consultoria-e-incubacion/14-blackbear-contents.png" alt="" aria-hidden="true" style="--lh: 46px;"></div>
-        <div class="agil-fl-cell agil-ci-cell"><img src="assets/consultoria-e-incubacion/15-col-sa.png" alt="" aria-hidden="true" style="--lh: 34px;"></div>
-        <div class="agil-fl-cell agil-ci-cell"><img src="assets/consultoria-e-incubacion/16-defihaus.png" alt="" aria-hidden="true" style="--lh: 34px;"></div>
-        <div class="agil-fl-cell agil-ci-cell"><img src="assets/consultoria-e-incubacion/17-chest-music.png" alt="" aria-hidden="true" style="--lh: 30px;"></div>
+        <div class="agil-fl-cell agil-ci-cell"><img width="356" height="50" loading="lazy" decoding="async" src="assets/consultoria-e-incubacion/01-abarca-distribuidora.webp" alt="" aria-hidden="true" style="--lh: 26px;"></div>
+        <div class="agil-fl-cell agil-ci-cell"><img width="640" height="242" loading="lazy" decoding="async" src="assets/consultoria-e-incubacion/02-kafe-sistemas.webp" alt="" aria-hidden="true" style="--lh: 34px;"></div>
+        <div class="agil-fl-cell agil-ci-cell"><img width="327" height="327" loading="lazy" decoding="async" src="assets/consultoria-e-incubacion/03-agilmentor.webp" alt="" aria-hidden="true" style="--lh: 54px;"></div>
+        <div class="agil-fl-cell agil-ci-cell"><img width="189" height="40" loading="lazy" decoding="async" src="assets/consultoria-e-incubacion/04-ares-argentina.webp" alt="" aria-hidden="true" style="--lh: 32px;"></div>
+        <div class="agil-fl-cell agil-ci-cell"><img width="265" height="212" loading="lazy" decoding="async" src="assets/consultoria-e-incubacion/05-vendimia-tech.webp" alt="" aria-hidden="true" style="--lh: 48px;"></div>
+        <div class="agil-fl-cell agil-ci-cell"><img width="395" height="395" loading="lazy" decoding="async" src="assets/consultoria-e-incubacion/06-mendoza-icons.webp" alt="" aria-hidden="true" style="--lh: 52px;"></div>
+        <div class="agil-fl-cell agil-ci-cell"><img width="614" height="283" loading="lazy" decoding="async" src="assets/consultoria-e-incubacion/07-quivra.webp" alt="" aria-hidden="true" style="--lh: 38px;"></div>
+        <div class="agil-fl-cell agil-ci-cell"><img width="351" height="108" loading="lazy" decoding="async" src="assets/consultoria-e-incubacion/08-alca-idiomas.webp" alt="" aria-hidden="true" style="--lh: 42px;"></div>
+        <div class="agil-fl-cell agil-ci-cell"><img width="655" height="103" loading="lazy" decoding="async" src="assets/consultoria-e-incubacion/09-pencilbox.webp" alt="" aria-hidden="true" style="--lh: 22px;"></div>
+        <div class="agil-fl-cell agil-ci-cell"><img width="129" height="33" loading="lazy" decoding="async" src="assets/consultoria-e-incubacion/10-flumit.webp" alt="" aria-hidden="true" style="--lh: 30px;"></div>
+        <div class="agil-fl-cell agil-ci-cell"><img width="352" height="58" loading="lazy" decoding="async" src="assets/consultoria-e-incubacion/11-3ng-tech.webp" alt="" aria-hidden="true" style="--lh: 24px;"></div>
+        <div class="agil-fl-cell agil-ci-cell"><img width="214" height="311" loading="lazy" decoding="async" src="assets/consultoria-e-incubacion/12-inca-empresa-junior.webp" alt="" aria-hidden="true" style="--lh: 58px;"></div>
+        <div class="agil-fl-cell agil-ci-cell"><img width="231" height="242" loading="lazy" decoding="async" src="assets/consultoria-e-incubacion/13-vantablack-studio.webp" alt="" aria-hidden="true" style="--lh: 54px;"></div>
+        <div class="agil-fl-cell agil-ci-cell"><img width="182" height="121" loading="lazy" decoding="async" src="assets/consultoria-e-incubacion/14-blackbear-contents.webp" alt="" aria-hidden="true" style="--lh: 46px;"></div>
+        <div class="agil-fl-cell agil-ci-cell"><img width="198" height="69" loading="lazy" decoding="async" src="assets/consultoria-e-incubacion/15-col-sa.webp" alt="" aria-hidden="true" style="--lh: 34px;"></div>
+        <div class="agil-fl-cell agil-ci-cell"><img width="954" height="288" loading="lazy" decoding="async" src="assets/consultoria-e-incubacion/16-defihaus.webp" alt="" aria-hidden="true" style="--lh: 34px;"></div>
+        <div class="agil-fl-cell agil-ci-cell"><img width="378" height="76" loading="lazy" decoding="async" src="assets/consultoria-e-incubacion/17-chest-music.webp" alt="" aria-hidden="true" style="--lh: 30px;"></div>
       </div>
     </div>
   </div>
@@ -426,27 +428,27 @@
     <div class="agil-fl-marquee">
       <div class="agil-fl-track">
         <!-- secuencia visible -->
-        <div class="agil-fl-cell"><img src="assets/formaciones/1-coderhouse.svg" alt="Coderhouse" style="--lh: 42px;"></div>
-        <div class="agil-fl-cell"><img src="assets/formaciones/2-alkemy.png" alt="Alkemy" style="--lh: 28px;"></div>
-        <div class="agil-fl-cell"><img src="assets/formaciones/3-empleotecnia.png" alt="Empleotecnia" style="--lh: 36px;"></div>
-        <div class="agil-fl-cell"><img src="assets/formaciones/4-uncuyo.png" alt="UNCuyo — Universidad Nacional de Cuyo" style="--lh: 44px;"></div>
-        <div class="agil-fl-cell"><img src="assets/formaciones/5-ucse.png" alt="UCSE — Universidad Católica de Santiago del Estero" style="--lh: 62px;"></div>
-        <div class="agil-fl-cell"><img src="assets/formaciones/6-aareii.png" alt="AArEII — Asociación Argentina de Estudiantes de Ingeniería Industrial" style="--lh: 66px;"></div>
-        <div class="agil-fl-cell"><img src="assets/formaciones/7-nerdconf.png" alt="Nerdconf" style="--lh: 46px;"></div>
-        <div class="agil-fl-cell"><img src="assets/formaciones/8-incubadora-uncuyo.png" alt="Incubadora UNCuyo" style="--lh: 34px;"></div>
-        <div class="agil-fl-cell"><img src="assets/formaciones/9-instituto-alba-edison.png" alt="Instituto Tomás Alva Edison" style="--lh: 80px;"></div>
-        <div class="agil-fl-cell"><img src="assets/formaciones/10-skillup.png" alt="Skill Up" style="--lh: 44px;"></div>
+        <div class="agil-fl-cell"><img width="811" height="236" loading="lazy" decoding="async" src="assets/formaciones/1-coderhouse.svg" alt="Coderhouse" style="--lh: 42px;"></div>
+        <div class="agil-fl-cell"><img width="627" height="130" loading="lazy" decoding="async" src="assets/formaciones/2-alkemy.webp" alt="Alkemy" style="--lh: 28px;"></div>
+        <div class="agil-fl-cell"><img width="392" height="144" loading="lazy" decoding="async" src="assets/formaciones/3-empleotecnia.webp" alt="Empleotecnia" style="--lh: 36px;"></div>
+        <div class="agil-fl-cell"><img width="452" height="147" loading="lazy" decoding="async" src="assets/formaciones/4-uncuyo.webp" alt="UNCuyo — Universidad Nacional de Cuyo" style="--lh: 44px;"></div>
+        <div class="agil-fl-cell"><img width="478" height="628" loading="lazy" decoding="async" src="assets/formaciones/5-ucse.webp" alt="UCSE — Universidad Católica de Santiago del Estero" style="--lh: 62px;"></div>
+        <div class="agil-fl-cell"><img width="380" height="526" loading="lazy" decoding="async" src="assets/formaciones/6-aareii.webp" alt="AArEII — Asociación Argentina de Estudiantes de Ingeniería Industrial" style="--lh: 66px;"></div>
+        <div class="agil-fl-cell"><img width="317" height="232" loading="lazy" decoding="async" src="assets/formaciones/7-nerdconf.webp" alt="Nerdconf" style="--lh: 46px;"></div>
+        <div class="agil-fl-cell"><img width="323" height="136" loading="lazy" decoding="async" src="assets/formaciones/8-incubadora-uncuyo.webp" alt="Incubadora UNCuyo" style="--lh: 34px;"></div>
+        <div class="agil-fl-cell"><img width="440" height="440" loading="lazy" decoding="async" src="assets/formaciones/9-instituto-alba-edison.webp" alt="Instituto Tomás Alva Edison" style="--lh: 80px;"></div>
+        <div class="agil-fl-cell"><img width="615" height="551" loading="lazy" decoding="async" src="assets/formaciones/10-skillup.webp" alt="Skill Up" style="--lh: 44px;"></div>
         <!-- duplicado para el loop (decorativo) -->
-        <div class="agil-fl-cell"><img src="assets/formaciones/1-coderhouse.svg" alt="" aria-hidden="true" style="--lh: 42px;"></div>
-        <div class="agil-fl-cell"><img src="assets/formaciones/2-alkemy.png" alt="" aria-hidden="true" style="--lh: 28px;"></div>
-        <div class="agil-fl-cell"><img src="assets/formaciones/3-empleotecnia.png" alt="" aria-hidden="true" style="--lh: 36px;"></div>
-        <div class="agil-fl-cell"><img src="assets/formaciones/4-uncuyo.png" alt="" aria-hidden="true" style="--lh: 44px;"></div>
-        <div class="agil-fl-cell"><img src="assets/formaciones/5-ucse.png" alt="" aria-hidden="true" style="--lh: 62px;"></div>
-        <div class="agil-fl-cell"><img src="assets/formaciones/6-aareii.png" alt="" aria-hidden="true" style="--lh: 66px;"></div>
-        <div class="agil-fl-cell"><img src="assets/formaciones/7-nerdconf.png" alt="" aria-hidden="true" style="--lh: 46px;"></div>
-        <div class="agil-fl-cell"><img src="assets/formaciones/8-incubadora-uncuyo.png" alt="" aria-hidden="true" style="--lh: 34px;"></div>
-        <div class="agil-fl-cell"><img src="assets/formaciones/9-instituto-alba-edison.png" alt="" aria-hidden="true" style="--lh: 80px;"></div>
-        <div class="agil-fl-cell"><img src="assets/formaciones/10-skillup.png" alt="" aria-hidden="true" style="--lh: 44px;"></div>
+        <div class="agil-fl-cell"><img width="811" height="236" loading="lazy" decoding="async" src="assets/formaciones/1-coderhouse.svg" alt="" aria-hidden="true" style="--lh: 42px;"></div>
+        <div class="agil-fl-cell"><img width="627" height="130" loading="lazy" decoding="async" src="assets/formaciones/2-alkemy.webp" alt="" aria-hidden="true" style="--lh: 28px;"></div>
+        <div class="agil-fl-cell"><img width="392" height="144" loading="lazy" decoding="async" src="assets/formaciones/3-empleotecnia.webp" alt="" aria-hidden="true" style="--lh: 36px;"></div>
+        <div class="agil-fl-cell"><img width="452" height="147" loading="lazy" decoding="async" src="assets/formaciones/4-uncuyo.webp" alt="" aria-hidden="true" style="--lh: 44px;"></div>
+        <div class="agil-fl-cell"><img width="478" height="628" loading="lazy" decoding="async" src="assets/formaciones/5-ucse.webp" alt="" aria-hidden="true" style="--lh: 62px;"></div>
+        <div class="agil-fl-cell"><img width="380" height="526" loading="lazy" decoding="async" src="assets/formaciones/6-aareii.webp" alt="" aria-hidden="true" style="--lh: 66px;"></div>
+        <div class="agil-fl-cell"><img width="317" height="232" loading="lazy" decoding="async" src="assets/formaciones/7-nerdconf.webp" alt="" aria-hidden="true" style="--lh: 46px;"></div>
+        <div class="agil-fl-cell"><img width="323" height="136" loading="lazy" decoding="async" src="assets/formaciones/8-incubadora-uncuyo.webp" alt="" aria-hidden="true" style="--lh: 34px;"></div>
+        <div class="agil-fl-cell"><img width="440" height="440" loading="lazy" decoding="async" src="assets/formaciones/9-instituto-alba-edison.webp" alt="" aria-hidden="true" style="--lh: 80px;"></div>
+        <div class="agil-fl-cell"><img width="615" height="551" loading="lazy" decoding="async" src="assets/formaciones/10-skillup.webp" alt="" aria-hidden="true" style="--lh: 44px;"></div>
       </div>
     </div>
   </div>
